@@ -1,0 +1,12 @@
+section.experienceSection {
+    display: flex;
+    justify-content:space-between;
+}
+
+.tasks {
+    margin: 1.2rem 8rem 1.2rem 0;
+    padding-left: 4rem;
+    display: flex;
+    flex-flow: column;
+    border-left: 2px solid darkgray;
+}
