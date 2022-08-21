@@ -1,28 +1,47 @@
-import './EducationDetails.css'
+import './stylesheets/EducationDetails.css'
 import { FaTrashAlt } from 'react-icons/fa'
+import { School } from './EducationDetailsSubComponents/School'
+import { Start } from './EducationDetailsSubComponents/Start'
+import { End } from './EducationDetailsSubComponents/End'
 
 
-export const EducationDetails = () => {
+export const EducationDetails = ({school, start, end, editMode, index, handleSubmit, handleTextEntry, handleDeletion}) => {
   return (
-    <section>
+    <form className='education-card'>
         <div className='complete-details'>
-            <div className="details">School:</div>
-            <div className="output">Hazleton Area High School</div>
+            <label htmlFor='school' className="details">School:</label>
+            <School 
+                school={school}
+                index={index}
+                editMode={editMode}
+                handleTextEntry={handleTextEntry}
+            />
         </div>
         <div className='complete-details'>
-            <div className="details">Start:</div>
-            <div className="output">2016</div>
+            <label htmlFor='start' className="details">Start:</label>
+            <Start
+                start={start}
+                index={index}
+                editMode={editMode}
+                handleTextEntry={handleTextEntry}
+            />
         </div>
         <div className='complete-details'>
-            <div className="details">End:</div>
-            <div className="output">2020</div>
+            <label htmlFor='end' className="details">End:</label>
+            <End 
+                end={end}
+                index={index}
+                editMode={editMode}
+                handleTextEntry={handleTextEntry}
+            />
         </div>
-        <button>Edit</button>
-        <FaTrashAlt 
+        <button type="submit" onClick={(e) => handleSubmit(e,index)}>{editMode ? 'Submit' : 'Edit'}</button>
+        {editMode ? <FaTrashAlt 
             role='button'
             tabIndex='0'
             aria-label='Delete education info'
-        />
-    </section>
+            onClick={() => handleDeletion(index)}
+        /> : null}
+    </form>
   )
 }

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-section {
+.education-card {
     border: 2px solid rgba(8, 8, 22, 0.658);
     width: 85%;
     margin-bottom: 1rem;
@@ -16,11 +16,11 @@ section {
     margin: 1rem;
 }
 
-section > button {
+.education-card > button {
     font-size: 1.2rem;
 }
 
-section > svg {
+.education-card > svg {
   width: 36px;
   min-width: 36px;
   height: 24px;
@@ -32,6 +32,6 @@ section > svg {
   right: 30px;
 }
 
-section > svg:hover {
+.education-card > svg:hover {
     color: red;
 }

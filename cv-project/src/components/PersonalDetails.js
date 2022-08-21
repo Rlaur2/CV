@@ -1,22 +1,48 @@
-import './PersonalDetails.css'
+import './stylesheets/PersonalDetails.css'
+import { useState } from 'react'
+import { Name } from './PersonalComponents/Name.js'
+import { Email } from './PersonalComponents/Email'
+import { Phone } from './PersonalComponents/Phone'
 
 export const PersonalDetails = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [editMode, setEditMode] = useState(true);
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEditMode(!editMode);
+  }
+
   return (
-    <div className="personal-details">
+    <form className="personal-details">
         <h2 className="section-title">Personal Details</h2>
         <div>
-            <div className="details">Name:</div>
-            <div className='output'>Pavel Laureano</div>
+            <label htmlFor='name' className="details">Name:</label>
+            <Name
+              name={name}
+              setName={setName}
+              editMode={editMode}
+              />
         </div>
         <div>
-            <div className="details">Email:</div>
-            <div className='output'>plaureanopena@gmail.com</div>
+            <label htmlFor='email' className="details">Email:</label>
+            <Email
+              email={email}
+              setEmail={setEmail}
+              editMode={editMode}
+            />
         </div>
         <div>
-            <div className="details">Phone #:</div>
-            <div className='output'>570-926-4314</div>
+            <label className="details">Phone #:</label>
+            <Phone
+              phone={phone}
+              setPhone={setPhone}
+              editMode={editMode}
+            />
         </div>
-        <button>Edit</button>
-    </div>
+        <button onClick={handleSubmit}>{editMode ? 'Submit' : 'Edit'}</button>
+    </form>
   )
 }

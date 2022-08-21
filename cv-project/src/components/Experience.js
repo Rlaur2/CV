@@ -1,4 +1,4 @@
-import './Experience.css'
+import './stylesheets/Experience.css'
 import { ExperienceCard } from './ExperienceCard'
 
 export const Experience = () => {
