@@ -7,7 +7,7 @@ import { End } from './EducationDetailsSubComponents/End'
 
 export const EducationDetails = ({school, start, end, editMode, index, handleSubmit, handleTextEntry, handleDeletion}) => {
   return (
-    <form className='education-card'>
+    <form className='card'>
         <div className='complete-details'>
             <label htmlFor='school' className="details">School:</label>
             <School 
@@ -35,8 +35,9 @@ export const EducationDetails = ({school, start, end, editMode, index, handleSub
                 handleTextEntry={handleTextEntry}
             />
         </div>
-        <button type="submit" onClick={(e) => handleSubmit(e,index)}>{editMode ? 'Submit' : 'Edit'}</button>
-        {editMode ? <FaTrashAlt 
+        <button type="submit" className='submit' onClick={(e) => handleSubmit(e,index)}>{editMode ? 'Submit' : 'Edit'}</button>
+        {editMode ? 
+        <FaTrashAlt 
             role='button'
             tabIndex='0'
             aria-label='Delete education info'

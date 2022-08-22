@@ -38,14 +38,19 @@
 .output {
     font-size: 1.5rem;
     margin-left: 2rem;
+    min-width: 300px;
 }
 
-button {
+.submit, .add {
     position: absolute;
     font-size: 1.5rem;
     font-weight: 600;
     padding: .3rem .5rem;
     border-radius: 6px;
-    bottom: 20px;
+    bottom: 26px;
     right: 20px;
+}
+
+button {
+    cursor: pointer;
 }

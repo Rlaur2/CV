@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.education-card {
+.card {
     border: 2px solid rgba(8, 8, 22, 0.658);
     width: 85%;
     margin-bottom: 1rem;
@@ -14,13 +14,15 @@
 .complete-details {
     display: flex;
     margin: 1rem;
+    align-items: center;
 }
 
-.education-card > button {
+.card > button {
     font-size: 1.2rem;
+    bottom: 15px;
 }
 
-.education-card > svg {
+.card > svg {
   width: 36px;
   min-width: 36px;
   height: 24px;
@@ -32,6 +34,6 @@
   right: 30px;
 }
 
-.education-card > svg:hover {
+.card > svg:hover {
     color: red;
 }

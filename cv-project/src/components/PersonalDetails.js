@@ -42,7 +42,7 @@ export const PersonalDetails = () => {
               editMode={editMode}
             />
         </div>
-        <button onClick={handleSubmit}>{editMode ? 'Submit' : 'Edit'}</button>
+        <button className='submit' onClick={handleSubmit}>{editMode ? 'Submit' : 'Edit'}</button>
     </form>
   )
 }

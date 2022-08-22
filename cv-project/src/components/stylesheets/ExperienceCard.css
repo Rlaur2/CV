@@ -1,12 +1,52 @@
-section.experienceSection {
+form.experienceSection {
     display: flex;
     justify-content:space-between;
+    flex-flow: column;
 }
+ #experience-submit {
+    top: 158px;
+    bottom: initial;
+ }
 
 .tasks {
-    margin: 1.2rem 8rem 1.2rem 0;
-    padding-left: 4rem;
     display: flex;
     flex-flow: column;
-    border-left: 2px solid darkgray;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus {
+  height: 36px;
+  min-width: 36px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: mediumblue;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 1rem;
+  box-shadow: 1px 1px;
+}
+
+.plus:hover {
+    background-color: limegreen;
+    color: white;
+}
+
+.ongoing-check {
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+    font-size: 1.3rem;
+}
+
+#ongoing {
+    height: 20px;
+    width: 20px;
+    margin-left: .2rem;
 }

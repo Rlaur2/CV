@@ -3,7 +3,7 @@ import { EducationDetails } from './EducationDetails'
 import { useState } from 'react'
 
 const Education = () => {
-  const [education, setEducation] = useState([{school: '', start: '', end: '', editMode: true},{school: 'University',start: 'Mickey',end: '2222',editMode: true}])
+  const [education, setEducation] = useState([{school: '', start: '', end: '', editMode: true}])
 
   
   const handleSubmit = (e, index) => {
@@ -53,14 +53,9 @@ const Education = () => {
             handleDeletion={handleDeletion}
             />
           ))}
-        <button onClick={handleAdd}>Add</button>
+        <button className='add' onClick={handleAdd}>Add</button>
     </div>
   )
 }
 
-//Today is just CSS but there will be an array of EducationDetails
-//and each item in the array will display as a section of education
-//educationDetails.map() will be used. But for now just one will be displayed
-//without the .map() function. The "Add" button will be displayed after
-//the educationDetails array is iterated through.
 export default Education
