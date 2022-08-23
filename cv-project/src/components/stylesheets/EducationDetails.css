@@ -22,7 +22,7 @@
     bottom: 15px;
 }
 
-.card > svg {
+.card > svg, .experience-trash {
   width: 36px;
   min-width: 36px;
   height: 24px;

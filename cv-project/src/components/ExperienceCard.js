@@ -6,7 +6,8 @@ import { Tasks } from './Tasks'
 
 export const ExperienceCard = ({index, company, title, start, end, ongoing, editMode, tasks, handleSubmit, handleTextEntry, handleDeletion, handleTaskText, handleTaskDeletion, handleTaskAdd, handleTaskSubmit, handleOngoing}) => {
   return (
-      <form className='experienceSection card'>
+      <div className='card'>
+      <form className='experienceSection'>
           <div className='company-side'>
             <div className='complete-details'>
               <div className="details">Company:</div>
@@ -65,6 +66,16 @@ export const ExperienceCard = ({index, company, title, start, end, ongoing, edit
                 /></div> : null}
             </div>
           </div>
+          <button id='experience-submit' className='submit' type="submit" onClick={(e) => handleSubmit(e,index)}>{editMode ? 'Submit' : 'Edit'}</button>
+          {editMode ? 
+        <FaTrashAlt 
+            role='button'
+            className='experience-trash'
+            tabIndex='0'
+            aria-label='Delete experience info'
+            onClick={() => handleDeletion(index)}
+        /> : null}
+          </form>
           <div className="tasks">
             <div className='details'>Tasks:</div>
             <ul>
@@ -78,21 +89,13 @@ export const ExperienceCard = ({index, company, title, start, end, ongoing, edit
                 handleTaskText={handleTaskText}
                 handleTaskSubmit={handleTaskSubmit}
                 handleTaskDeletion={handleTaskDeletion}
-                focusOn={false}
+                focusOn={true}
                 />
               ))}
             </ul>
             <div className='plus' onClick={() => handleTaskAdd(index)}><FaPlus /></div>
           </div>
-          <button id='experience-submit' className='submit' type="submit" onClick={(e) => handleSubmit(e,index)}>{editMode ? 'Submit' : 'Edit'}</button>
           {/* Hitting enter on this form isn't acting the same as the others. Look into that. */}
-          {editMode ? 
-        <FaTrashAlt 
-            role='button'
-            tabIndex='0'
-            aria-label='Delete experience info'
-            onClick={() => handleDeletion(index)}
-        /> : null}
-      </form>
+      </div>
   )
 }
