@@ -4,10 +4,12 @@ import { ExperienceInput } from './ExperienceInput'
 import { FaPlus } from 'react-icons/fa'
 import { Tasks } from './Tasks'
 
+//Here we finally created one component "ExperienceInput" and re-used it multiple times, with the differences being handled by the different things passed(drilled) into it
 export const ExperienceCard = ({index, company, title, start, end, ongoing, editMode, tasks, handleSubmit, handleTextEntry, handleDeletion, handleTaskText, handleTaskDeletion, handleTaskAdd, handleTaskSubmit, handleOngoing}) => {
   return (
       <div className='card'>
       <form className='experienceSection'>
+        {/*Had to seperate this form from another form below since you can't have a nest a Form in another Form */}
           <div className='company-side'>
             <div className='complete-details'>
               <div className="details">Company:</div>
@@ -95,7 +97,6 @@ export const ExperienceCard = ({index, company, title, start, end, ongoing, edit
             </ul>
             <div className='plus' onClick={() => handleTaskAdd(index)}><FaPlus /></div>
           </div>
-          {/* Hitting enter on this form isn't acting the same as the others. Look into that. */}
       </div>
   )
 }

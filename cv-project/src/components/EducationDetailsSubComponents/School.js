@@ -14,3 +14,5 @@ export const School = ({school,editMode, index, handleTextEntry}) => {
     </div>
   )
 }
+
+//Once again, this and the other two components could've just been a single component

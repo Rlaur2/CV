@@ -2,7 +2,7 @@ import './stylesheets/Experience.css'
 import { ExperienceCard } from './ExperienceCard'
 import { useState } from 'react'
 
-
+//This component is very similar to the Education component except for the addition of another array in the object state
 export const Experience = () => {
   const [experience, setExperience] = useState([{company: '', title: '', start: '', end: '', editMode: true, ongoing: false, tasks: [{editMode: true, task: ''}]}]);
 
@@ -35,6 +35,7 @@ export const Experience = () => {
   }
 
   const handleOngoing = (index) => {
+    //this handles the text of the "end" input. If set to true, the "end" input will read "Current"
     const listExperience = [...experience];
     listExperience[index].ongoing = !listExperience[index].ongoing
     setExperience(listExperience);
@@ -43,6 +44,7 @@ export const Experience = () => {
   const handleTaskAdd = (index) => {
     const newTask = {editMode: true, task: ''};
     const listExperience = [...experience];
+    //all of the handleTasks functions work the same as the normal ones except a level deeper into the object
     listExperience[index].tasks = [...listExperience[index].tasks, newTask];
     setExperience(listExperience);
   }

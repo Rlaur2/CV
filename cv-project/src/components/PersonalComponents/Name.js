@@ -15,3 +15,5 @@ export const Name = ({name, setName, editMode}) => {
    </div> 
   )
 }
+
+//I should've made a single component instead of creating three seperate ones.
